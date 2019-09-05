@@ -28,12 +28,14 @@ export default class TelaInicio extends Component {
                     <TouchableHighlight style={styles.btn}
                         title='Ir tela Resultado' onPress={() => Actions.telaJogo()}>
                         <View>
-                            <Text style={styles.txt}>Ir para tela Jogo</Text>
+                            <Text style={styles.txt}>Jogar!</Text>
                         </View>
                     </TouchableHighlight>
                 </View>
 
-                <View>
+                <View style={{
+                    flex:1,
+                }}>
                     <Text style={styles.footer}>Copyright©‎Vash</Text>
                 </View>
             </View>
@@ -58,6 +60,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: 0,
         bottom: 0,
+        width: '100%',
         backgroundColor: 'gray',
         color: 'white',
         padding: 10,
