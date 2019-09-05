@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-
+const papel = require('../imgs/papel.png')
+const pedra = require('../imgs/pedra.png')
+const tesoura = require('../imgs/tesoura.png')
 
 export default class TelaJogo extends Component {
     render() {
         return (
-            <View style={{ backgroundColor: 'white', flex: 1 }}>
+            <View style={{
+                backgroundColor: 'white',
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+            }}>
 
                 <View style={{
                     flex: 1
@@ -21,24 +28,27 @@ export default class TelaJogo extends Component {
                 <View style={{
                     flex: 1
                 }}>
-                    <Text style={[styles.bordas, styles.pedra]}>Pedra!</Text>
-                </View>
+                    <TouchableHighlight style={styles.btn}
+                        title='Ir tela Resultado'>
+                        <View>
+                            <Image style={[styles.bordas, styles.pedra]} source={pedra}></Image>
+                        </View>
+                    </TouchableHighlight>
 
+                </View>
 
                 {/* Papel */}
                 <View style={{
                     flex: 1
                 }}>
-
-                    <Text style={[styles.bordas, styles.papel]}>Papel!</Text>
+                    <Image style={[styles.bordas, styles.papel]} source={papel}></Image>
                 </View>
-
 
                 {/* Tesoura */}
                 <View style={{
                     flex: 1
                 }}>
-                    <Text style={[styles.bordas, styles.tesoura]}>Tesoura!</Text>
+                    <Image style={[styles.bordas, styles.tesoura]} source={tesoura}></Image>
                 </View>
             </View>
         );
@@ -58,10 +68,12 @@ const styles = StyleSheet.create({
     },
     bordas: {
         borderWidth: 1,
-        marginTop: 15,
-        marginLeft: 5,
-        marginRight: 5,
         padding: 15,
+        width: 200,
+        height: 150,
+        alignSelf: 'flex-start',
+        alignItems: 'center',
+        justifyContent: 'flex-start'
     },
     pedra: {
         borderColor: '#eecbad',
