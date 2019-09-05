@@ -9,9 +9,9 @@ const Routes = () =>{
     return(
         <Router>
             <Scene>
-                <Scene key='telaInicio' Component={TelaInicio} initial/>
-                <Scene key='telaJogo' Component={TelaJogo}/>
-                <Scene key='telaJogo' Component={TelaResultado}/>
+                <Scene key='telaInicio' component={TelaInicio} initial hideNavBar/>
+                <Scene key='telaJogo' component={TelaJogo} hideNavBar/>
+                <Scene key='telaResultado' component={TelaResultado} hideNavBar/>
             </Scene>
         </Router>
     );
