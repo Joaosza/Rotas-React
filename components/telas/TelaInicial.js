@@ -25,7 +25,7 @@ export default class TelaInicio extends Component {
                 <View style={{
                     flex: 1
                 }}>
-                    <TouchableHighlight style={styles.btn}
+                    <TouchableHighlight style={styles.btn}su 
                         title='Ir tela Resultado' onPress={() => Actions.telaJogo()}>
                         <View>
                             <Text style={styles.txt}>Jogar!</Text>

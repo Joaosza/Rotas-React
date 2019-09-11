@@ -13,7 +13,7 @@ export default class TelaJogo extends Component {
                 backgroundColor: 'white',
                 flex: 1,
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+
             }}>
 
                 <View style={{
@@ -26,12 +26,17 @@ export default class TelaJogo extends Component {
 
                 {/* Pedra */}
                 <View style={{
-                    flex: 1
+                    flex: 1,
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                 }}>
                     <TouchableHighlight style={styles.btn}
                         title='Ir tela Resultado'>
-                        <View>
-                            <Image style={[styles.bordas, styles.pedra]} source={pedra}></Image>
+                        <View style={[
+                            styles.bordas
+                        ]}>
+                            <Image style={[styles.pedra]} source={pedra}></Image>
                         </View>
                     </TouchableHighlight>
 
@@ -39,16 +44,39 @@ export default class TelaJogo extends Component {
 
                 {/* Papel */}
                 <View style={{
-                    flex: 1
+                    flex: 1,
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                 }}>
-                    <Image style={[styles.bordas, styles.papel]} source={papel}></Image>
+                    <TouchableHighlight style={styles.btn}
+                        title='Ir tela Resultado'>
+                        <View style={[
+                            styles.bordas
+                        ]}>
+                            <Image style={[styles.papel]} source={papel}></Image>
+                        </View>
+                    </TouchableHighlight>
+
                 </View>
 
                 {/* Tesoura */}
                 <View style={{
-                    flex: 1
+                    flex: 1,
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                 }}>
-                    <Image style={[styles.bordas, styles.tesoura]} source={tesoura}></Image>
+                    <TouchableHighlight style={styles.btn}
+                        title='Ir tela Resultado'>
+                        <View style={[
+                            styles.bordas
+                        ]}>
+                            <Image style={[styles.tesoura]} source={tesoura} />
+                        </View>
+                    </TouchableHighlight>
+
+
                 </View>
             </View>
         );
@@ -66,23 +94,50 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 20
     },
-    bordas: {
-        borderWidth: 1,
-        padding: 15,
-        width: 200,
-        height: 150,
-        alignSelf: 'flex-start',
+    texto: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
-        justifyContent: 'flex-start'
+    },
+    img: {
+
     },
     pedra: {
-        borderColor: '#eecbad',
+        borderWidth: 1,
+        padding: 15,
+        width: 150,
+        height: 100,
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: -50,
+        marginLeft: -50,
+        borderColor: '#808080',
     },
     tesoura: {
-        borderColor: '#87ceff',
+        borderWidth: 1,
+        padding: 15,
+        width: 150,
+        height: 100,
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: -50,
+        marginLeft: -50,
+        borderColor: '#eecbad',
     },
     papel: {
-        borderColor: '#848484',
+        borderWidth: 1,
+        padding: 15,
+        width: 150,
+        height: 100,
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: -50,
+        marginLeft: -50,
+        borderColor: '#000',
     },
 
 })
