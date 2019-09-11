@@ -23,7 +23,6 @@ export default class TelaJogo extends Component {
                     <Text style={styles.txt}>Escolha!</Text>
                 </View>
 
-
                 {/* Pedra */}
                 <View style={{
                     flex: 1,
@@ -34,9 +33,9 @@ export default class TelaJogo extends Component {
                     <TouchableHighlight style={styles.btn}
                         title='Ir tela Resultado'>
                         <View style={[
-                            styles.bordas
+                            styles.img
                         ]}>
-                            <Image style={[styles.pedra]} source={pedra}></Image>
+                            <Image style={[styles.pedra, styles.img]} source={pedra}></Image>
                         </View>
                     </TouchableHighlight>
 
@@ -52,9 +51,9 @@ export default class TelaJogo extends Component {
                     <TouchableHighlight style={styles.btn}
                         title='Ir tela Resultado'>
                         <View style={[
-                            styles.bordas
+                            styles.img
                         ]}>
-                            <Image style={[styles.papel]} source={papel}></Image>
+                            <Image style={[styles.papel, styles.img]} source={papel}></Image>
                         </View>
                     </TouchableHighlight>
 
@@ -69,14 +68,10 @@ export default class TelaJogo extends Component {
                 }}>
                     <TouchableHighlight style={styles.btn}
                         title='Ir tela Resultado'>
-                        <View style={[
-                            styles.bordas
-                        ]}>
-                            <Image style={[styles.tesoura]} source={tesoura} />
+                        <View>
+                            <Image style={[styles.tesoura, styles.img]} source={tesoura} />
                         </View>
                     </TouchableHighlight>
-
-
                 </View>
             </View>
         );
@@ -94,50 +89,31 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 20
     },
-    texto: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     img: {
-
+        width: 200,
+        height: 120,
     },
     pedra: {
         borderWidth: 1,
-        padding: 15,
-        width: 150,
-        height: 100,
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        marginTop: -50,
-        marginLeft: -50,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         borderColor: '#808080',
+        padding: 50,
     },
     tesoura: {
         borderWidth: 1,
-        padding: 15,
-        width: 150,
-        height: 100,
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        marginTop: -50,
-        marginLeft: -50,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         borderColor: '#eecbad',
+        padding: 50,
     },
     papel: {
         borderWidth: 1,
-        padding: 15,
-        width: 150,
-        height: 100,
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        marginTop: -50,
-        marginLeft: -50,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         borderColor: '#000',
+        padding: 50,
+
     },
 
 })

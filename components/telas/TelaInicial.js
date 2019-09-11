@@ -4,6 +4,7 @@ import { Actions } from 'react-native-router-flux';
 
 
 const jokenpo = require('../imgs/jokenpo.jpg')
+const play = require('../imgs/botao.png')
 
 export default class TelaInicio extends Component {
     render() {
@@ -25,9 +26,10 @@ export default class TelaInicio extends Component {
                 <View style={{
                     flex: 1
                 }}>
-                    <TouchableHighlight style={styles.btn}su 
+                    <TouchableHighlight 
                         title='Ir tela Resultado' onPress={() => Actions.telaJogo()}>
                         <View>
+                            <Image source={play} style={[styles.img]} />
                             <Text style={styles.txt}>Jogar!</Text>
                         </View>
                     </TouchableHighlight>
@@ -44,17 +46,14 @@ export default class TelaInicio extends Component {
 }
 
 const styles = StyleSheet.create({
-    btn: {
-        marginTop: 10,
-        borderWidth: 2,
-        backgroundColor: 'black',
-        borderRadius: 50,
-        padding: 12,
-    },
+
     txt: {
         color: '#fff',
         fontSize: 20,
         textAlign: "center"
+    },
+    txt:{
+        textAlign: 'center'
     },
     footer: {
         position: 'absolute',
@@ -66,6 +65,13 @@ const styles = StyleSheet.create({
         padding: 10,
         textAlign: 'center',
         fontSize: 20,
+    },
+    img: {
+        marginTop: 15,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: 100,
+        height: 100,
     }
 });
 
