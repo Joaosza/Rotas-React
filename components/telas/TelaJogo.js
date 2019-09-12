@@ -7,6 +7,51 @@ const pedra = require('../imgs/pedra.png')
 const tesoura = require('../imgs/tesoura.png')
 
 export default class TelaJogo extends Component {
+
+    state = {
+        usuario: '',
+        computador: '',
+        resultado: '',
+    }
+
+    async escolhaUsuario() {
+        switch (this.props.opcaoJogador) {
+            case 'pedra':
+                await this.setState({ imgJogador: pedra });
+                if (this.state.escolhaPc == 'pedra') {
+                    await this.setState({
+                        imgApp: pedra,
+                        resultado: 'empate'
+                    });
+                } else if (this.setState.escolhaPc == 'papel') {
+                    await this.setState({
+                        imgApp: papel,
+                        resultado: 'perdeu'
+                    });
+                } else (this.setState.escolhaPc == 'tesoura'){
+                    await this.setState({
+                        imgApp: tesoura,
+                        resultado: 'ganhou'
+                    });
+                }
+        }
+    }
+    escolhaPc() {
+        let numeroAleatorio = Math.floor(Math.random() * 3);
+        switch (numeroAleatorio) {
+            case 0: computador = 'pedra'; break
+            case 1: computador = 'papel'; break
+            case 2: computador = 'tesoura'; break
+            default: computador = '';
+        }
+    }
+
+    async componentWillMount() {
+        await this.setState.SetJogador();
+        await this.setState.SetPc();
+        await this.setState.SetResultado();
+    }
+
     render() {
         return (
             <View style={{
